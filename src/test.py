@@ -21,7 +21,7 @@ import tensorflow as tf
 
 import kl_tools
 
-DIM_Z = 2
+DIM_Z = 16
 DIM_C = mnist_dataset.NUM_LABELS
 INPUT_SHAPE=mnist_dataset.IMG_DIM ** 2
 ACTIVATION="tanh"
@@ -119,7 +119,7 @@ cvae.compile( optimizer=opt, )
 import os
 if not os.path.exists("mnist_icvae.h5"):
   cvae.fit(
-    { "x" : train_x, "c" : train_y }, epochs=100
+    { "x" : train_x, "c" : train_y }, epochs=50
   )
   cvae.save_weights("mnist_icvae.h5")
 else:
