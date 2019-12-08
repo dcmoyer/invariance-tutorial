@@ -1,4 +1,4 @@
-#Non-adversarial Invariant Representations Tutorial
+# Non-adversarial Invariant Representations Tutorial
 
 This repo contains tutorial content, example code, and working loss function
 calculators for
