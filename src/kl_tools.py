@@ -12,7 +12,7 @@ def all_pairs_gaussian_kl(mu, sigma, add_third_term=False):
   #mu is [batchsize x dim_z]
   #sigma is [batchsize x dim_z]
 
-  sigma_sq_inv = tf.reciprocal(sigma_sq)
+  sigma_sq_inv = tf.math.reciprocal(sigma_sq)
   #sigma_inv is [batchsize x sizeof(latent_space)]
 
   #
@@ -57,7 +57,7 @@ def all_pairs_gaussian_kl(mu, sigma, add_third_term=False):
   #   so this cancels out
 
   if(add_third_term):
-    r = tf.reduce_sum(tf.log(sigma_sq),1)
+    r = tf.reduce_sum(tf.math.log(sigma_sq),1)
     r = tf.reshape(r,[-1,1])
     third_term = r - tf.transpose(r)
   else:
